@@ -1,0 +1,23 @@
+@import url("./_variable.css");
+@import url("./_colors.css");
+
+.auth-wrapper {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.auth {
+  width: 450px;
+  padding: var(--lg);
+}
+
+.auth-title {
+  color: var(--gray);
+  margin-bottom: var(--lg);
+}
+
+.auth-section {
+  display: flex;
+  margin: var(--lg) 0;
+}

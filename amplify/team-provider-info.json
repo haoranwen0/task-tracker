@@ -10,6 +10,11 @@
       "StackName": "amplify-tasktracker-dev-131849",
       "StackId": "arn:aws:cloudformation:us-east-1:062943963762:stack/amplify-tasktracker-dev-131849/c13eac20-d2e0-11ec-a2c3-12025204a60f",
       "AmplifyAppId": "d2kxniy3wb5g22"
+    },
+    "categories": {
+      "auth": {
+        "tasktrackerd2b1feb1": {}
+      }
     }
   }
 }

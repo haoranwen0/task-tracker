@@ -1,0 +1,8 @@
+@import url("./_colors.css");
+@import url("./_variable.css");
+
+.auth-bg-wrapper {
+  flex: 1;
+  background-color: var(--primary-bg-color);
+  box-shadow: var(--container-box-shadow);
+}
