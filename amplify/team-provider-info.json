@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "tasktrackerd2b1feb1": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2kxniy3wb5g22",
+          "type": "manual"
+        }
       }
     }
   }

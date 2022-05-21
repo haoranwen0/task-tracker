@@ -4,6 +4,9 @@
   --md: 12px;
   --sm: 8px;
   --xsm: 4px;
+  --xxsm: 2px;
+  --header-height: 60px;
+  --radius: 12px;
 }
 
 div {

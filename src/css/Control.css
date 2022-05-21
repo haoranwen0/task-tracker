@@ -1,0 +1,39 @@
+.control-wrapper {
+  width: 350px;
+  height: 100%;
+}
+
+.control {
+  width: 100%;
+  height: auto;
+  padding: var(--lg);
+  background-color: var(--primary-bg-color);
+  border-radius: var(--radius);
+  box-shadow: var(--container-box-shadow);
+}
+
+.control-guide {
+  margin-bottom: var(--md);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.control-guide .title {
+  color: var(--gray);
+}
+
+.control-guide .create {
+  cursor: pointer;
+  color: var(--primary-accent-color);
+}
+
+.control-guide .create.hover-underline-animation:after {
+  background-color: var(--primary-accent-color);
+}
+
+.control-labels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--md);
+}

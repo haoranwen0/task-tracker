@@ -1,0 +1,10 @@
+.label {
+  user-select: none;
+  cursor: pointer;
+  color: var(--gray);
+  background-color: #ffffff;
+  padding: var(--xxsm) var(--md);
+  border-radius: var(--md);
+  box-shadow: var(--container-box-shadow);
+  margin: 0 var(--sm) var(--sm) 0;
+}

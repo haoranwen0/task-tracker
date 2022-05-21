@@ -21,3 +21,16 @@
   display: flex;
   margin: var(--lg) 0;
 }
+
+.auth-section.redirect {
+  color: var(--gray);
+  justify-content: space-between;
+}
+
+.auth-redirect-selections {
+  cursor: pointer;
+}
+
+.auth-redirect-selections.hover-underline-animation:after {
+  background-color: var(--primary-accent-color);
+}

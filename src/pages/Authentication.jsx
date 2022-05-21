@@ -5,11 +5,11 @@ import AuthBg from "../components/AuthBg";
 
 import "../css/Authentication.css";
 
-function Authenticaton() {
+function Authenticaton({ state }) {
   return (
     <div className="login-wrapper">
       <AuthBg />
-      <Auth />
+      <Auth formState={state} />
     </div>
   );
 }

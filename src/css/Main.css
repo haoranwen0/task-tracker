@@ -1,0 +1,7 @@
+@import url("./_variable.css");
+
+.main-wrapper {
+  height: calc(100vh - var(--header-height));
+  padding: var(--lg);
+  display: flex;
+}

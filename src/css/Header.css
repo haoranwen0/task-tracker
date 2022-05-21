@@ -1,0 +1,37 @@
+@import url("./_colors.css");
+@import url("./_variable.css");
+
+.header-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 0 var(--lg);
+  height: var(--header-height);
+  background-color: var(--primary-bg-color);
+  box-shadow: var(--container-box-shadow);
+}
+
+.header-title,
+.header-welcome,
+.header-selections {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.header-welcome {
+  justify-content: center;
+}
+
+.header-welcome span {
+  font-size: 1.25em;
+  font-weight: 800;
+  color: var(--gray);
+}
+
+.header-icon {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: var(--secondary-bg-color);
+  box-shadow: var(--container-box-shadow);
+}
