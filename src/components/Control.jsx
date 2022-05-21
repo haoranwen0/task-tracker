@@ -24,9 +24,9 @@ function Control() {
           create={false}
           labels={[
             ["List", "default"],
-            ["Day", "default"],
-            ["Week", "default"],
-            ["Month", "default"],
+            // ["Day", "default"],
+            // ["Week", "default"],
+            // ["Month", "default"],
           ]}
         />
       </div>

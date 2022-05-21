@@ -3,8 +3,6 @@ import React from "react";
 import Label from "./Label";
 
 function ControlSection({ title, create, labels }) {
-  console.log(labels);
-
   return (
     <>
       <div className="control-guide">

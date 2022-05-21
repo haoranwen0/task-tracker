@@ -31,3 +31,12 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+/* styles for quick access */
+.flex {
+  display: flex;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
