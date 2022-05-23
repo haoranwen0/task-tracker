@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "tasktracker",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\hranw\\Documents\\GitHub\\task-tracker\\amplify\\backend\\api\\tasktracker\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authtasktrackerd2b1feb1"
+    }
+  }
+}

@@ -10,11 +10,12 @@ export const AuthButton = styled(Button)({
   },
 });
 
-export const CreateTaskButton = styled(Button)({
+export const CreateButton = styled(Button)({
   backgroundColor: colorPalette.primaryAccentColor,
   color: "#ffffff",
   textTransform: "none",
-  width: "auto",
+  width: "100%",
+  fontSize: "0.75em",
   fontWeight: "600",
   position: "relative",
   top: "0",

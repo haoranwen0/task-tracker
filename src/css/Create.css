@@ -90,7 +90,6 @@
   width: 100%;
   min-height: 150px;
   resize: none;
-  /* padding: var(--sm); */
   font-size: 1em;
   border-radius: var(--radius);
   background-color: transparent;

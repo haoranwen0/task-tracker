@@ -23,6 +23,10 @@
   color: var(--gray);
 }
 
+.control-create-wrapper {
+  position: relative;
+}
+
 .control-guide .create {
   cursor: pointer;
   color: var(--primary-accent-color);
@@ -36,4 +40,65 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: var(--md);
+}
+
+.control-create-menu {
+  width: auto;
+  height: auto;
+  position: absolute;
+  background-color: var(--primary-bg-color);
+  padding: var(--md);
+  border-radius: var(--radius);
+  box-shadow: var(--container-box-shadow);
+  top: 100%;
+  left: 0%;
+}
+
+.control-color-selection {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 var(--sm) var(--sm) 0;
+}
+
+.control-color-selection.custom-color {
+  cursor: pointer;
+  border: 2px solid var(--primary-accent-color);
+}
+
+.color-picker-wrapper {
+  position: relative;
+}
+
+.control-create-menu-input {
+  background-color: transparent;
+  border: 0;
+  padding: var(--sm) 0;
+  font-size: 1em;
+  border-bottom: 2px solid var(--gray);
+}
+
+.control-create-menu-input::placeholder {
+  color: var(--gray);
+}
+
+.control-create-menu-input:focus {
+  outline: 0;
+  border-color: var(--primary-accent-color);
+}
+
+.control-create-menu-section {
+  margin-bottom: var(--md);
+}
+
+.control-create-menu-section.color-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-picker {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  z-index: 999;
 }

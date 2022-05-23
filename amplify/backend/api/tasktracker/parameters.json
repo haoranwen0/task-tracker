@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "tasktracker",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authtasktrackerd2b1feb1",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

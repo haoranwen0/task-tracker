@@ -4,7 +4,7 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { TextField, MenuItem } from "@mui/material";
-import { CreateTaskButton } from "../mui/Button";
+import { CreateButton } from "../mui/Button";
 import useCreateTask from "../hooks/useCreateTask";
 
 function CreateMenu({ handleCreateTask }) {
@@ -79,7 +79,7 @@ function CreateMenu({ handleCreateTask }) {
         </div>
       )}
       <div className="create-task-section flex flex-end">
-        <CreateTaskButton onClick={onCreateTask}>Create Task</CreateTaskButton>
+        <CreateButton onClick={onCreateTask}>Create Task</CreateButton>
       </div>
       <div className="create-menu-close" onClick={handleCreateTask}>
         <CloseIcon />
