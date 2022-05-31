@@ -20,6 +20,12 @@
           "appId": "d2kxniy3wb5g22",
           "type": "manual"
         }
+      },
+      "function": {
+        "canvasFunction": {
+          "deploymentBucketName": "amplify-tasktracker-dev-131849-deployment",
+          "s3Key": "amplify-builds/canvasFunction-70537359555646756530-build.zip"
+        }
       }
     }
   }

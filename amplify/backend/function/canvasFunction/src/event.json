@@ -1,0 +1,11 @@
+{
+  "httpMethod": "GET",
+  "path": "/canvas",
+  "queryStringParameters": {
+    "limit": "30"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"msg\":\"Hello from the event.json body\"}"
+}

@@ -6,6 +6,7 @@ import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { TextField, MenuItem } from "@mui/material";
 import { CreateButton } from "../mui/Button";
 import useCreateTask from "../hooks/useCreateTask";
+import { API } from "aws-amplify";
 
 function CreateMenu({ handleCreateTask }) {
   const [
@@ -21,6 +22,16 @@ function CreateMenu({ handleCreateTask }) {
     label: "default",
     notes: "",
   });
+
+  React.useEffect(() => {
+    API.get("endpoints", "/canvas")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="create-task-menu">
