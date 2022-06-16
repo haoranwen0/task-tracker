@@ -33,7 +33,7 @@
   padding: var(--md);
   background-color: var(--primary-bg-color);
   border-radius: var(--radius);
-  box-shadow: var(--container-box-shadow);
+  border: 1px solid var(--gray);
 }
 
 .create-task-title-input {

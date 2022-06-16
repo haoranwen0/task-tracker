@@ -1,8 +1,8 @@
 /* Color palatte from https://colorhunt.co/palette/fbf8f1f7ecdee9dac154bab9 */
 
 :root {
-  --primary-bg-color: #fbf8f1;
-  --secondary-bg-color: #f7ecde;
+  --primary-bg-color: #fafafa;
+  --secondary-bg-color: #ffffff;
   --primary-accent-color: #54bab9;
-  --gray: #bcbcbc;
+  --gray: #dddddd;
 }

@@ -8,7 +8,6 @@ export const disabled = {
 
 export const labelOff = {
   backgroundColor: "#ffffff",
-  color: "#bcbcbc",
 };
 
 export const labelOn = {

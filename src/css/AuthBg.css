@@ -4,5 +4,5 @@
 .auth-bg-wrapper {
   flex: 1;
   background-color: var(--primary-bg-color);
-  box-shadow: var(--container-box-shadow);
+  border-right: 1px solid var(--gray);
 }

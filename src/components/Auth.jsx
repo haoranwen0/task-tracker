@@ -1,11 +1,8 @@
 import React from "react";
-import { AuthInput } from "../mui/Input";
-import { AuthButton } from "../mui/Button";
+import { SubmitButton } from "../mui/Button";
 import useAuthControl from "../hooks/useAuthControl";
 import { disabled } from "../constants/styles";
 import { useSelector } from "react-redux";
-
-import "../css/Auth.css";
 
 function Auth({ formState }) {
   const [
@@ -34,7 +31,7 @@ function Auth({ formState }) {
 
   return (
     <div className="auth-wrapper">
-      <div className="auth">
+      <form className="auth">
         <div className="auth-title">
           <h1>{title}</h1>
         </div>
@@ -44,8 +41,8 @@ function Auth({ formState }) {
             state === "signIn" ||
             state === "forgotPassword") && (
             <div className="auth-section">
-              <AuthInput
-                fullWidth={true}
+              <input
+                className="auth-input"
                 name="email"
                 placeholder="Enter Email"
                 onChange={handleFormChange}
@@ -55,16 +52,16 @@ function Auth({ formState }) {
           {state === "signUp" && (
             <>
               <div className="auth-section">
-                <AuthInput
-                  fullWidth={true}
+                <input
+                  className="auth-input"
                   name="lastName"
                   placeholder="Last name"
                   onChange={handleFormChange}
                 />
               </div>
               <div className="auth-section">
-                <AuthInput
-                  fullWidth={true}
+                <input
+                  className="auth-input"
                   name="firstName"
                   placeholder="First name"
                   onChange={handleFormChange}
@@ -74,9 +71,9 @@ function Auth({ formState }) {
           )}
           {(state === "confirmSignUp" || state === "resetPassword") && (
             <div className="auth-section">
-              <AuthInput
+              <input
+                className="auth-input"
                 name="confirmationCode"
-                fullWidth={true}
                 placeholder="Confirm Code"
                 onChange={handleFormChange}
               />
@@ -86,9 +83,9 @@ function Auth({ formState }) {
             state === "signIn" ||
             state === "resetPassword") && (
             <div className="auth-section">
-              <AuthInput
+              <input
+                className="auth-input"
                 name="password"
-                fullWidth={true}
                 type="password"
                 placeholder="Enter Password"
                 onChange={handleFormChange}
@@ -97,9 +94,9 @@ function Auth({ formState }) {
           )}
           {(state === "signUp" || state === "resetPassword") && (
             <div className="auth-section">
-              <AuthInput
+              <input
+                className="auth-input"
                 name="confirmPassword"
-                fullWidth={true}
                 type="password"
                 placeholder="Confirm Password"
                 onChange={handleFormChange}
@@ -108,14 +105,13 @@ function Auth({ formState }) {
           )}
           <div className="auth-section" />
           <div className="auth-section">
-            <AuthButton
-              variant="contained"
-              fullWidth={true}
+            <SubmitButton
+              type="submit"
               onClick={handleFormSubmission}
               sx={loading ? null : disabled}
             >
               {buttonText}
-            </AuthButton>
+            </SubmitButton>
           </div>
           <div className="auth-section redirect">
             {state === "signUp" && (
@@ -152,7 +148,7 @@ function Auth({ formState }) {
             )}
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

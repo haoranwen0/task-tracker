@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { ChromePicker } from "react-color";
 import CloseIcon from "@mui/icons-material/Close";
-import { CreateButton } from "../mui/Button";
-import { labelColorSelections } from "../constants/colors";
+import { SubmitButton } from "../mui/Button";
 
 import Label from "./Label";
 
 function ControlSection({ title, create, labels }) {
-  const [color, updateColor] = useState("#da3f68");
   const [showMenu, updateShowMenu] = useState(false);
-  const [showColorPicker, updateShowColorPicker] = useState(false);
 
   return (
     <>
@@ -33,38 +29,8 @@ function ControlSection({ title, create, labels }) {
                     className="control-create-menu-input"
                   />
                 </div>
-                <div className="control-create-menu-section color-section">
-                  {labelColorSelections.map((hex, index) => (
-                    <div
-                      className="control-color-selection"
-                      style={{ backgroundColor: hex }}
-                      key={index}
-                    />
-                  ))}
-                  <div className="color-picker-wrapper">
-                    <div
-                      className="control-color-selection custom-color"
-                      onClick={() => updateShowColorPicker((prev) => !prev)}
-                      style={{
-                        backgroundColor: color,
-                      }}
-                    ></div>
-                    {showColorPicker && (
-                      <div className="color-picker">
-                        <ChromePicker
-                          onChange={(color, event) => {
-                            console.log(color);
-                            updateColor(color.hex);
-                          }}
-                          color={color}
-                          disableAlpha={true}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
                 <div className="control-create-menu-section">
-                  <CreateButton>Create Label</CreateButton>
+                  <SubmitButton>Create Label</SubmitButton>
                 </div>
                 <div
                   className="create-menu-close"

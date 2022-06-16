@@ -3,8 +3,6 @@ import AddIcon from "@mui/icons-material/Add";
 
 import CreateMenu from "./CreateMenu";
 
-import "../css/Create.css";
-
 function Create() {
   const [showMenu, updateShowMenu] = useState(false);
 

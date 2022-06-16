@@ -13,7 +13,9 @@ function HeaderWelcome() {
 
   return (
     <div className="header-welcome">
-      <span className="header-welcome-message">Welcome, {firstName}!</span>
+      {user && (
+        <span className="header-welcome-message">Welcome, {firstName}!</span>
+      )}
     </div>
   );
 }

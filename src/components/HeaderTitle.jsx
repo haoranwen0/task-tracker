@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HeaderTitle() {
   return (
     <div className="header-title">
-      <div className="header-icon" />
+      <Link to="/">
+        <h1>Task Tracker</h1>
+      </Link>
     </div>
   );
 }

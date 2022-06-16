@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { labelOff, labelOn } from "../constants/styles";
 
-import "../css/Label.css";
-
 function Label({ label, category }) {
   const [selected, updateSelected] = useState(false);
 

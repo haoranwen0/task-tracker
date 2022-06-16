@@ -17,6 +17,22 @@
   margin-bottom: var(--lg);
 }
 
+.auth-input {
+  width: 100%;
+  padding: var(--sm) 0;
+  border: 0;
+  border-bottom: 2px solid var(--gray);
+}
+
+.auth-input::placeholder {
+  color: var(--gray);
+}
+
+.auth-input:focus {
+  border-color: var(--primary-accent-color);
+  outline: 0;
+}
+
 .auth-section {
   display: flex;
   margin: var(--lg) 0;

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "./redux-features/userSlice";
 import { callCurrentAuthenticatedUser } from "./logic/callAuthCheckers";
 
+import Header from "./components/Header";
 import Authentication from "./pages/Authentication";
 import Home from "./pages/Home";
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/login" element={<Authentication state="signIn" />} />
           <Route path="/sign-up" element={<Authentication state="signUp" />} />

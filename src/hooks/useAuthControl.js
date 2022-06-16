@@ -40,7 +40,8 @@ export default function useAuthControl(initialValue) {
     }));
   };
 
-  const handleFormSubmission = () => {
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
     if (state === "signUp") signUp();
     if (state === "confirmSignUp") confirmSignUp();
     if (state === "signIn") signIn();

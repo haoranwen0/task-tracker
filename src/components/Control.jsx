@@ -2,8 +2,6 @@ import React from "react";
 
 import ControlSection from "./ControlSection";
 
-import "../css/Control.css";
-
 function Control() {
   return (
     <div className="control-wrapper">
@@ -13,21 +11,16 @@ function Control() {
           create={true}
           labels={[
             ["View All", "default"],
-            ["6.002", "custom"],
-            ["6.003", "custom"],
-            ["6.170", "custom"],
-            ["21G.011", "custom"],
+            ["6.002", "default"],
+            ["6.003", "default"],
+            ["6.170", "default"],
+            ["21G.011", "default"],
           ]}
         />
         <ControlSection
           title="Views"
           create={false}
-          labels={[
-            ["List", "default"],
-            // ["Day", "default"],
-            // ["Week", "default"],
-            // ["Month", "default"],
-          ]}
+          labels={[["List", "default"]]}
         />
       </div>
     </div>

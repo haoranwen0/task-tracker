@@ -7,9 +7,9 @@
   width: 100%;
   height: auto;
   padding: var(--lg);
-  background-color: var(--primary-bg-color);
+  background-color: var(--secondary-bg-color);
   border-radius: var(--radius);
-  box-shadow: var(--container-box-shadow);
+  border: 1px solid var(--gray);
 }
 
 .control-guide {
@@ -17,10 +17,6 @@
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-}
-
-.control-guide .title {
-  color: var(--gray);
 }
 
 .control-create-wrapper {
@@ -46,10 +42,10 @@
   width: auto;
   height: auto;
   position: absolute;
-  background-color: var(--primary-bg-color);
+  background-color: var(--secondary-bg-color);
   padding: var(--md);
   border-radius: var(--radius);
-  box-shadow: var(--container-box-shadow);
+  border: 1px solid var(--gray);
   top: 100%;
   left: 0%;
 }
