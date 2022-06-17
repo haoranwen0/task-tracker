@@ -1,62 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
-@import url("./css/_variable.css");
-@import url("./css/_colors.css");
-@import url("./css/Auth.css");
-@import url("./css/AuthBg.css");
-@import url("./css/Authentication.css");
-@import url("./css/Control.css");
-@import url("./css/Create.css");
-@import url("./css/Header.css");
-@import url("./css/Home.css");
-@import url("./css/Label.css");
-@import url("./css/Main.css");
-@import url("./css/View.css");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('./css/_variables.css');
+@import url('./css/Authentication.css');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+/* Default element stylings */
 input {
-  font-size: 16px;
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  padding: var(--sm);
+  border: 1px solid var(--border-color);
 }
 
-/* global css for animations */
-.hover-underline-animation {
-  display: inline-block;
-  position: relative;
+input:focus {
+  outline: none;
 }
 
-.hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--primary-accent-color);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+/* Pre-defined styles */
+.m-l-sm {
+  margin-left: var(--sm);
 }
 
-.hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* styles for quick access */
-.flex {
-  display: flex;
-}
-
-.flex-end {
-  justify-content: flex-end;
+.m-r-sm {
+  margin-right: var(--sm);
 }
