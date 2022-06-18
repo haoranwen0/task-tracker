@@ -9,7 +9,14 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/login' element={<Authentication />} />
+          <Route
+            path='/login'
+            element={<Authentication authenticationState='signIn' />}
+          />
+          <Route
+            path='/sign-up'
+            element={<Authentication authenticationState='signUp' />}
+          />
         </Routes>
       </Router>
     </>

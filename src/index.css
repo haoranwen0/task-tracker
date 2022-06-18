@@ -1,31 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-@import url('./css/_variables.css');
-@import url('./css/Authentication.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-/* Default element stylings */
-input {
-  border-radius: var(--border-radius);
-  font-size: 1em;
-  padding: var(--sm);
-  border: 1px solid var(--border-color);
-}
-
-input:focus {
-  outline: none;
-}
-
-/* Pre-defined styles */
-.m-l-sm {
-  margin-left: var(--sm);
-}
-
-.m-r-sm {
-  margin-right: var(--sm);
-}
+/* @layer components {
+  .hover-underline-animation {
+    @apply inline-block relative text-purple-600 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-0 after:left-0 after:bg-purple-600 after:origin-bottom-right after:transition after:ease-out after:delay-[250] hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+} */
