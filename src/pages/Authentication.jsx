@@ -1,7 +1,7 @@
 import useAuthentication from '../hooks/useAuthentication';
 
 const Authentication = ({ authenticationState }) => {
-  const [form, handleFormChange, onSubmit] = useAuthentication({
+  const [form, error, handleFormChange, onSubmit] = useAuthentication({
     state: authenticationState,
     password: '',
     confirmPassword: '',
@@ -20,10 +20,30 @@ const Authentication = ({ authenticationState }) => {
         </div>
         <form className='min-w-[24rem] max-w-[26rem]'>
           <div className='mb-10'>
-            <h1 className='text-3xl font-bold mb-4'>Welcome back</h1>
-            <p className='text-gray-600'>
-              Welcome back! Please enter your details.
+            <h1 className='text-3xl font-bold mb-4'>
+              {form.state === 'signIn'
+                ? 'Welcome back'
+                : form.state === 'signUp'
+                ? 'Create an account'
+                : form.state === 'confirmSignUp'
+                ? 'Verify your email'
+                : form.state === 'forgotPassword' ||
+                  form.state === 'forgotPasswordSubmit'
+                ? 'Reset your password'
+                : null}
+            </h1>
+            <p className='text-gray-600 mb-4'>
+              {form.state === 'signIn'
+                ? 'Welcome back! Please enter your details'
+                : form.state === 'signUp'
+                ? "First time? Let's create your account"
+                : form.state === 'confirmSignUp'
+                ? 'Check your inbox for the confirmation code'
+                : form.state === 'forgotPassword'
+                ? 'Forgot your password? Enter your email to reset it'
+                : null}
             </p>
+            <p className='text-red-600'>{error}</p>
           </div>
           {form.state === 'signUp' && (
             <div className='w-full mb-4 flex'>
@@ -57,35 +77,60 @@ const Authentication = ({ authenticationState }) => {
               </div>
             </div>
           )}
-          <div className='w-full mb-4 flex flex-col'>
-            <label className='mb-2' htmlFor='email'>
-              Email
-            </label>
-            <input
-              className='border p-2 rounded-md border-gray-300 focus:outline-none focus:border-purple-600 transition'
-              name='email'
-              type='text'
-              placeholder='Enter your email'
-              value={form.email}
-              onChange={handleFormChange}
-              required
-            />
-          </div>
-          <div className='w-full mb-4 flex flex-col'>
-            <label className='mb-2' htmlFor='password'>
-              Password
-            </label>
-            <input
-              className='border p-2 rounded-md border-gray-300 focus:outline-none focus:border-purple-600 transition'
-              name='password'
-              type='password'
-              placeholder='Enter your password'
-              value={form.password}
-              onChange={handleFormChange}
-              required
-            />
-          </div>
-          {form.state === 'signUp' && (
+          {form.state === 'confirmSignUp' && (
+            <div className='w-full mb-4 flex flex-col'>
+              <label className='mb-2' htmlFor='confirmation code'>
+                Confirmation Code
+              </label>
+              <input
+                className='border p-2 rounded-md border-gray-300 focus:outline-none focus:border-purple-600 transition'
+                name='confirmationCode'
+                type='text'
+                placeholder='Enter confirmation code'
+                value={form.confirmationCode}
+                onChange={handleFormChange}
+                required
+              />
+            </div>
+          )}
+          {(form.state === 'signIn' ||
+            form.state === 'signUp' ||
+            form.state === 'forgotPassword') && (
+            <div className='w-full mb-4 flex flex-col'>
+              <label className='mb-2' htmlFor='email'>
+                Email
+              </label>
+              <input
+                className='border p-2 rounded-md border-gray-300 focus:outline-none focus:border-purple-600 transition'
+                name='email'
+                type='text'
+                placeholder='Enter your email'
+                value={form.email}
+                onChange={handleFormChange}
+                required
+              />
+            </div>
+          )}
+          {(form.state === 'signIn' ||
+            form.state === 'signUp' ||
+            form.state === 'forgotPasswordSubmit') && (
+            <div className='w-full mb-4 flex flex-col'>
+              <label className='mb-2' htmlFor='password'>
+                Password
+              </label>
+              <input
+                className='border p-2 rounded-md border-gray-300 focus:outline-none focus:border-purple-600 transition'
+                name='password'
+                type='password'
+                placeholder='Enter your password'
+                value={form.password}
+                onChange={handleFormChange}
+                required
+              />
+            </div>
+          )}
+          {(form.state === 'signUp' ||
+            form.state === 'forgotPasswordSubmit') && (
             <>
               <div className='w-full mb-4 flex flex-col'>
                 <label className='mb-2' htmlFor='password'>
@@ -95,7 +140,7 @@ const Authentication = ({ authenticationState }) => {
                   className='border p-2 rounded-md border-gray-300 focus:outline-none focus:border-purple-600 transition'
                   name='confirmPassword'
                   type='password'
-                  placeholder='Enter your password again'
+                  placeholder='Confirm your password'
                   value={form.confirmPassword}
                   onChange={handleFormChange}
                   required
@@ -103,7 +148,7 @@ const Authentication = ({ authenticationState }) => {
               </div>
               <div className='w-full mb-4'>
                 <p className='text-sm'>
-                  Contains at least 1{' '}
+                  Password must contain at least 1{' '}
                   <span className='font-semibold'>number</span>, at least 1{' '}
                   <span className='font-semibold'>special character</span>, at
                   least 1 uppercase letter and at least 1{' '}
@@ -112,16 +157,43 @@ const Authentication = ({ authenticationState }) => {
               </div>
             </>
           )}
-          <div className='w-full flex justify-end my-6'>
-            <span className='text-sm font-semibold text-purple-600 cursor-pointer'>
-              Forgot password
-            </span>
-          </div>
+          {form.state === 'signIn' && (
+            <div className='w-full flex justify-end my-6'>
+              <span
+                className='text-sm font-semibold text-purple-600 cursor-pointer'
+                onClick={() => (window.location.href = '/forgot-password')}
+              >
+                Forgot password
+              </span>
+            </div>
+          )}
           <div className='w-full flex flex-col mb-8'>
             <input
-              className='border p-2 border-gray-300 bg-purple-600 rounded-md text-white cursor-pointer'
+              className={
+                'border p-2 border-gray-300 bg-purple-600 rounded-md text-white cursor-pointer' +
+                `${
+                  form.state === 'forgotPassword' ||
+                  form.state === 'confirmSignUp' ||
+                  form.state === 'signUp' ||
+                  form.state === 'forgotPasswordSubmit'
+                    ? ' mt-4'
+                    : ''
+                }`
+              }
               type='submit'
-              value='Sign in'
+              value={
+                form.state === 'signIn'
+                  ? 'Sign in'
+                  : form.state === 'signUp'
+                  ? 'Sign up'
+                  : form.state === 'forgotPassword'
+                  ? 'Reset password'
+                  : form.state === 'forgotPasswordSubmit'
+                  ? 'Reset password'
+                  : form.state === 'confirmSignUp'
+                  ? 'Confirm'
+                  : null
+              }
               onClick={onSubmit}
             />
           </div>
@@ -135,13 +207,15 @@ const Authentication = ({ authenticationState }) => {
                   window.location.href =
                     form.state === 'signIn'
                       ? '/sign-up'
-                      : form.state === 'signUp'
+                      : form.state === 'signUp' ||
+                        form.state === 'forgotPassword'
                       ? '/login'
                       : null;
                 }}
               >
                 {form.state === 'signIn' && 'Sign up'}
-                {form.state === 'signUp' && 'Sign in'}
+                {(form.state === 'signUp' || form.state === 'forgotPassword') &&
+                  'Sign in'}
               </span>
             </span>
           </div>

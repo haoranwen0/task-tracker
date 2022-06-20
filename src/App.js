@@ -17,6 +17,10 @@ function App() {
             path='/sign-up'
             element={<Authentication authenticationState='signUp' />}
           />
+          <Route
+            path='/forgot-password'
+            element={<Authentication authenticationState='forgotPassword' />}
+          />
         </Routes>
       </Router>
     </>
