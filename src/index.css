@@ -7,3 +7,9 @@
     @apply inline-block relative text-purple-600 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-0 after:left-0 after:bg-purple-600 after:origin-bottom-right after:transition after:ease-out after:delay-[250] hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 } */
+
+@layer components {
+  .icon-container {
+    @apply grid place-items-center;
+  }
+}

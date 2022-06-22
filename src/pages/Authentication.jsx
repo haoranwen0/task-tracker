@@ -1,7 +1,8 @@
 import useAuthentication from '../hooks/useAuthentication';
+import { Oval } from 'react-loading-icons';
 
 const Authentication = ({ authenticationState }) => {
-  const [form, error, handleFormChange, onSubmit] = useAuthentication({
+  const [form, error, loading, handleFormChange, onSubmit] = useAuthentication({
     state: authenticationState,
     password: '',
     confirmPassword: '',
@@ -77,7 +78,8 @@ const Authentication = ({ authenticationState }) => {
               </div>
             </div>
           )}
-          {form.state === 'confirmSignUp' && (
+          {(form.state === 'confirmSignUp' ||
+            form.state === 'forgotPasswordSubmit') && (
             <div className='w-full mb-4 flex flex-col'>
               <label className='mb-2' htmlFor='confirmation code'>
                 Confirmation Code
@@ -168,9 +170,9 @@ const Authentication = ({ authenticationState }) => {
             </div>
           )}
           <div className='w-full flex flex-col mb-8'>
-            <input
+            <button
               className={
-                'border p-2 border-gray-300 bg-purple-600 rounded-md text-white cursor-pointer' +
+                'border p-2 border-gray-300 bg-purple-600 rounded-md text-white cursor-pointer flex justify-center items-center' +
                 `${
                   form.state === 'forgotPassword' ||
                   form.state === 'confirmSignUp' ||
@@ -180,22 +182,22 @@ const Authentication = ({ authenticationState }) => {
                     : ''
                 }`
               }
-              type='submit'
-              value={
-                form.state === 'signIn'
-                  ? 'Sign in'
-                  : form.state === 'signUp'
-                  ? 'Sign up'
-                  : form.state === 'forgotPassword'
-                  ? 'Reset password'
-                  : form.state === 'forgotPasswordSubmit'
-                  ? 'Reset password'
-                  : form.state === 'confirmSignUp'
-                  ? 'Confirm'
-                  : null
-              }
               onClick={onSubmit}
-            />
+            >
+              {loading ? (
+                <Oval height='1.5rem' strokeWidth={3} />
+              ) : form.state === 'signIn' ? (
+                'Sign in'
+              ) : form.state === 'signUp' ? (
+                'Sign up'
+              ) : form.state === 'forgotPassword' ? (
+                'Reset password'
+              ) : form.state === 'forgotPasswordSubmit' ? (
+                'Reset password'
+              ) : form.state === 'confirmSignUp' ? (
+                'Confirm'
+              ) : null}
+            </button>
           </div>
           <div className='w-full mb-4 flex justify-center'>
             <span className='text-sm'>
